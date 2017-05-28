@@ -12,8 +12,8 @@
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://creativecommons.org/ns#license> "http://creativecommons.org/licenses/by/4.0/" .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://purl.org/dc/elements/1.1/rights> "Creative Commons Attribution 4.0 International (CC BY 4.0)" .
-<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://purl.org/dc/elements/1.1/title> "Ontolog\u00EDa para Contaminaci\u00F3n Ac\u00FAstica"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://purl.org/dc/elements/1.1/description> "Este vocabulario extiende la W3C Semantic Sensor Network Ontology (SSN) con propiedades para representar los datos de la contaminaci\u00F3n ac\u00FAstica. Tambi\u00E9n se extiende la OWL Ontology of Time (OWL-Time)  para representar el tiempo y la WGS84 Geo Positioning para representar la posici\u00F3n en el espacio a trav\u00E9s de la longitud, latitud y altitud"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://purl.org/dc/elements/1.1/title> "Contaminaci\u00F3n Ac\u00FAstica"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/2002/07/owl#imports> <http://purl.oclc.org/NET/ssnx/ssn> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
@@ -90,6 +90,8 @@
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PonderacionA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Weighting> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PonderacionA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Nivel de Ruido en Percentiles"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Percentil Noise Level"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Nivel percentil de ruido que ha sido medido por el sensor"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.oclc.org/NET/ssnx/ssn#Property> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate> <http://www.w3.org/2000/01/rdf-schema#label> "\u00FAltima fecha de calibraci\u00F3n"@es .
