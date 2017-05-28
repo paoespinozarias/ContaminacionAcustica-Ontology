@@ -1,0 +1,281 @@
+@prefix :        <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns:      <http://creativecommons.org/ns#> .
+@prefix wgs84_pos:  <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix terms:   <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+
+:ClaseII
+      a       owl:NamedIndividual , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:comment "Sensor que cumple las características de precisión menos restrictivas definidas en la normativa IEC. Esta clase de sensores tiene mayores márgenes de tolerancia en su rango de medida."@es ;
+      rdfs:label "Clase II"@es ;
+      rdfs:seeAlso "Normativa internacional IEC 61672-1:2013"@es .
+
+wgs84_pos:lat
+      a       owl:ObjectProperty ;
+      rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
+      rdfs:domain wgs84_pos:SpatialThing ;
+      rdfs:label "latitude" , "latitud"@es .
+
+vann:preferredNamespaceUri
+      a       owl:AnnotationProperty .
+
+:lastCalibrationDate
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Última fecha de calibración del sensor.  La calibración es un proceso periódico realizado a los sensores acústicos para verificar su correcto funcionamiento en sus distintos modos de trabajo."@es ;
+      rdfs:domain :NoiseSensor ;
+      rdfs:label "última fecha de calibración"@es , "last calibration date"@en ;
+      rdfs:range xsd:dateTime .
+
+foaf:based_near
+      a       owl:AnnotationProperty .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure>
+      a       owl:Class .
+
+<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica>
+      a       owl:Ontology ;
+      ns:license "http://creativecommons.org/licenses/by/4.0/" ;
+      dc:description "Este vocabulario extiende la W3C Semantic Sensor Network Ontology (SSN) con propiedades para representar los datos de la contaminación acústica. También se extiende la OWL Ontology of Time (OWL-Time)  para representar el tiempo y la WGS84 Geo Positioning para representar la posición en el espacio a través de la longitud, latitud y altitud"@es ;
+      dc:rights "Creative Commons Attribution 4.0 International (CC BY 4.0)" ;
+      dc:title "Ontología para Contaminación Acústica"@es ;
+      owl:imports <http://www.w3.org/2006/time> , <http://purl.oclc.org/NET/ssnx/ssn> .
+
+wgs84_pos:Point
+      a       owl:Class ;
+      rdfs:comment """A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  """ , """ 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  """ ;
+      rdfs:label "point" ;
+      rdfs:subClassOf wgs84_pos:SpatialThing .
+
+:ClaseI
+      a       owl:NamedIndividual , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:comment "Sensor que cumple las características de precisión más restrictivas definidas en la normativa IEC. Esta clase de sensores tiene menores márgenes de tolerancia en su rango de medida."@es ;
+      rdfs:label "Clase I"@es ;
+      rdfs:seeAlso "Normativa internacional IEC 61672-1:2013"@es .
+
+:isWeightingWith
+      a       owl:ObjectProperty ;
+      rdfs:comment "La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial. Puede ser sin poderación (Z), ponderación A o C"@es ;
+      rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> ;
+      rdfs:label "es ponderado con"@es , "is weightin with"@en ;
+      rdfs:range :Weighting .
+
+:PonderacionZ
+      a       owl:NamedIndividual , <http://www.w3.org/2004/02/skos/core#Concept> , :Weighting ;
+      rdfs:comment "Representa el hecho de no aplicar ningún tipo de ponderación frecuencial a las ondas sonoras captadas por el sensor de ruido. Se captan tal y como son."@es ;
+      rdfs:label "Ponderación Z"@es ;
+      rdfs:seeAlso "Norma IEC 61672:2003"@es .
+
+<http://purl.oclc.org/NET/ssnx/ssn#observationSamplingTime>
+      rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> ;
+      rdfs:range <http://www.w3.org/2006/time#TemporalEntity> .
+
+<http://www.w3.org/2004/02/skos/core#Concept>
+      a       owl:Class .
+
+:PercentilNoiseLevel
+      a       owl:Class ;
+      rdfs:label "Nivel de Ruido en Percentiles"@es ;
+      rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+wgs84_pos:location
+      a       owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment """The relation between something and the point, 
+ or other geometrical thing in space, where it is.  For example, the realtionship between
+ a radio tower and a Point with a given lat and long.
+ Or a relationship between a park and its outline as a closed arc of points, or a road and
+ its location as a arc (a sequence of points).
+ Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
+ an accuracy appropriate for the size of the object and uses such as mapping .
+ """ ;
+      rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#SensingDevice> ;
+      rdfs:label "location" ;
+      rdfs:range wgs84_pos:SpatialThing ;
+      rdfs:subPropertyOf foaf:based_near .
+
+:Weighting
+      a       owl:Class ;
+      rdfs:comment "La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial. Puede ser sin poderación (Z), ponderación A o C"@es ;
+      rdfs:label "Ponderación"@es , "Weighting"@en ;
+      rdfs:subClassOf <http://www.loa-cnr.it/ontologies/DUL.owl#Method> .
+
+:NoiseLevel
+      a       owl:Class ;
+      rdfs:comment "Nivel de ruido que ha sido medido por el sensor. Se mide en Decibelios (dB)"@es ;
+      rdfs:label "Nivel de Ruido"@es , "Noise Level"@en ;
+      rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+:belongsToSensorClass
+      a       owl:ObjectProperty ;
+      rdfs:comment "Un Sensor tiene unas características específicas según la Clase a la que pertenece. Puede ser de Clase I o II o no pertenecer a ninguna Clase."@es ;
+      rdfs:domain :NoiseSensor ;
+      rdfs:label "belongs to Sensor Class"@en , "pertenece a una Clase de Sensor"@es ;
+      rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+dc:description
+      a       owl:AnnotationProperty .
+
+:AverageNoiseLevel
+      a       owl:Class ;
+      rdfs:comment "Nivel medio de ruido que ha sido medido por el sensor."@es ;
+      rdfs:label "Average Noise Level"@en , "Nivel Medio de Ruido"@es ;
+      rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+wgs84_pos:
+      rdfs:comment """
+Recent changes to this namespace:
+$Log: wgs84_pos.rdf,v $
+Revision 1.22  2009/04/20 15:00:30  timbl
+Remove the time bits which have been deal with elsewhere eg in iCal.
+
+Revision 1.21  2009/04/20 12:52:47  timbl
+try again
+
+Revision 1.20  2009/04/20 12:42:11  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.19  2009/04/20 12:36:31  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.18  2006/02/01 22:01:04  danbri
+Clarified that lat and long are decimal degrees, and that alt is decimal metres about local reference ellipsoid
+
+Revision 1.17  2004/02/06 17:38:12  danbri
+Fixed a bad commit screwup
+
+Revision 1.15  2003/04/19 11:24:08  danbri
+Fixed the typo even more.
+
+Revision 1.14  2003/04/19 11:16:56  danbri
+fixed a typo
+
+Revision 1.13  2003/02/19 22:27:27  connolly
+relaxed domain constraints on lat/long/alt from Point to SpatialThing
+
+Revision 1.12  2003/01/12 01:41:41  danbri
+Trying local copy of XSLT doc.
+
+Revision 1.11  2003/01/12 01:20:18  danbri
+added a link to morten's xslt rdfs viewer.
+
+Revision 1.10  2003/01/11 18:56:49  danbri
+Removed datatype range from lat and long properties, since they would
+have required each occurance of the property to mention the datatype.
+
+Revision 1.9  2003/01/11 11:41:31  danbri
+Another typo; repaired rdfs:Property to rdf:Property x4
+
+Revision 1.8  2003/01/11 11:05:02  danbri
+Added an rdfs:range for each lat/long/alt property,
+http://www.w3.org/2001/XMLSchema#float
+
+Revision 1.7  2003/01/10 20:25:16  danbri
+Longer rdfs:comment for Point, trying to be Earth-centric and neutral about
+coordinate system(s) at the same time. Feedback welcomed.
+
+Revision 1.6  2003/01/10 20:18:30  danbri
+Added CVS log comments into the RDF/XML as an rdfs:comment property of the
+vocabulary. Note that this is not common practice (but seems both harmless
+and potentially useful).
+
+
+revision 1.5
+date: 2003/01/10 20:14:31;  author: danbri;  state: Exp;  lines: +16 -5
+Updated schema:
+Added a dc:date, added url for more info. Changed the rdfs:label of the
+namespace from gp to geo. Added a class Point, set as the rdfs:domain of
+each property. Added XML comment on the lat_long property suggesting that
+we might not need it (based on #rdfig commentary from implementors).
+
+revision 1.4
+date: 2003/01/10 20:01:07;  author: danbri;  state: Exp;  lines: +6 -5
+Fixed typo; several rdfs:about attributes are now rdf:about. Thanks to MortenF in
+#rdfig for catching this error.
+
+revision 1.3
+date: 2003/01/10 11:59:03;  author: danbri;  state: Exp;  lines: +4 -3
+fixed buglet in vocab, added more wgs links
+
+revision 1.2
+date: 2003/01/10 11:01:11;  author: danbri;  state: Exp;  lines: +4 -4
+Removed alt from the as-a-flat-string property, and switched from
+space separated to comma separated.
+
+revision 1.1
+date: 2003/01/10 10:53:23;  author: danbri;  state: Exp;
+basic geo vocab
+
+""" ;
+      rdfs:label "geo" ;
+      dc:date "$Date: 2009/04/20 15:00:30 $" ;
+      dc:description """A vocabulary for representing latitude, longitude and 
+ altitude information in the WGS84 geodetic reference datum. 
+ Version $Id: wgs84_pos.rdf,v 1.22 2009/04/20 15:00:30 timbl Exp $. See http://www.w3.org/2003/01/geo/ for more details.""" ;
+      dc:title "WGS84 Geo Positioning: an RDF vocabulary" .
+
+wgs84_pos:SpatialThing
+      a       owl:Class ;
+      rdfs:comment """Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes.
+""" ;
+      rdfs:label "SpatialThing" .
+
+wgs84_pos:alt
+      a       owl:ObjectProperty ;
+      rdfs:comment """The WGS84 altitude of a SpatialThing (decimal meters 
+above the local reference ellipsoid).""" ;
+      rdfs:domain wgs84_pos:SpatialThing ;
+      rdfs:label "altitud"@es , "altitude" .
+
+:NoiseSensor
+      a       owl:Class ;
+      rdfs:comment "Mide el nivel de ruido"@es ;
+      rdfs:label "Noise Sensor"@en , "Sensor de Ruido"@es ;
+      rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#SensingDevice> .
+
+:PonderacionA
+      a       owl:NamedIndividual , <http://www.w3.org/2004/02/skos/core#Concept> , :Weighting ;
+      rdfs:comment "Ponderación más habitual en acústica ambiental. Se utiliza para ajustar los niveles de ruido a cómo los percibe el oido humano."@es ;
+      rdfs:label "Ponderación A"@es ;
+      rdfs:seeAlso "Norma IEC 61672:2003"@es .
+
+wgs84_pos:lat_long
+      rdfs:comment "A comma-separated representation of a latitude, longitude coordinate." ;
+      rdfs:label "lat/long" .
+
+wgs84_pos:long
+      a       owl:ObjectProperty ;
+      rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
+      rdfs:domain wgs84_pos:SpatialThing ;
+      rdfs:label "longitud"@es , "longitude" .
+
+vann:preferredNamespacePrefix
+      a       owl:AnnotationProperty .
+
+:PonderacionC
+      a       owl:NamedIndividual , <http://www.w3.org/2004/02/skos/core#Concept> , :Weighting ;
+      rdfs:comment "Ponderación que se utiliza para evaluar altos niveles de ruido."@es ;
+      rdfs:label "Ponderación C"@es ;
+      rdfs:seeAlso "Norma IEC 61672:2003"@es .
+
+:hasUnitOfMeasure
+      a       owl:ObjectProperty ;
+      rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#SensorOutput> ;
+      rdfs:label "has unit of measure"@en ;
+      rdfs:range <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> .
+
+<http://dbpedia.org/resource/Decibel>
+      a       owl:NamedIndividual , <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> .
