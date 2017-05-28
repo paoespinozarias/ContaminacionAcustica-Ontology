@@ -1850,7 +1850,6 @@ Expr = Sizzle.selectors = {
 
 		// "Whether an element is represented by a :lang() selector
 		// is based solely on the element's language value
-<<<<<<< HEAD
 		// being equal to the identifier C,
 		// or beginning with the identifier C immediately followed by "-".
 		// The matching of C against the element's language value is performed case-insensitively.
@@ -5903,7 +5902,503 @@ jQuery.fn.extend({
 						node = jQuery.clone( node, true, true );
 
 						// Keep references to cloned scripts for later restoration
-						if ( hasScripts 
-=======
-		// being e
->>>>>>> refs/remotes/origin/master
+						if ( hasScripts ) {
+							jQuery.merge( scripts, getAll( node, "script" ) );
+						}
+					}
+
+					callback.call( this[i], node, i );
+				}
+
+				if ( hasScripts ) {
+					doc = scripts[ scripts.length - 1 ].ownerDocument;
+
+					// Reenable scripts
+					jQuery.map( scripts, restoreScript );
+
+					// Evaluate executable scripts on first document insertion
+					for ( i = 0; i < hasScripts; i++ ) {
+						node = scripts[ i ];
+						if ( rscriptType.test( node.type || "" ) &&
+							!jQuery._data( node, "globalEval" ) && jQuery.contains( doc, node ) ) {
+
+							if ( node.src ) {
+								// Optional AJAX dependency, but won't run scripts if not present
+								if ( jQuery._evalUrl ) {
+									jQuery._evalUrl( node.src );
+								}
+							} else {
+								jQuery.globalEval( ( node.text || node.textContent || node.innerHTML || "" ).replace( rcleanScript, "" ) );
+							}
+						}
+					}
+				}
+
+				// Fix #11809: Avoid leaking memory
+				fragment = first = null;
+			}
+		}
+
+		return this;
+	}
+});
+
+jQuery.each({
+	appendTo: "append",
+	prependTo: "prepend",
+	insertBefore: "before",
+	insertAfter: "after",
+	replaceAll: "replaceWith"
+}, function( name, original ) {
+	jQuery.fn[ name ] = function( selector ) {
+		var elems,
+			i = 0,
+			ret = [],
+			insert = jQuery( selector ),
+			last = insert.length - 1;
+
+		for ( ; i <= last; i++ ) {
+			elems = i === last ? this : this.clone(true);
+			jQuery( insert[i] )[ original ]( elems );
+
+			// Modern browsers can apply jQuery collections as arrays, but oldIE needs a .get()
+			push.apply( ret, elems.get() );
+		}
+
+		return this.pushStack( ret );
+	};
+});
+
+
+var iframe,
+	elemdisplay = {};
+
+/**
+ * Retrieve the actual display of a element
+ * @param {String} name nodeName of the element
+ * @param {Object} doc Document object
+ */
+// Called only from within defaultDisplay
+function actualDisplay( name, doc ) {
+	var elem = jQuery( doc.createElement( name ) ).appendTo( doc.body ),
+
+		// getDefaultComputedStyle might be reliably used only on attached element
+		display = window.getDefaultComputedStyle ?
+
+			// Use of this method is a temporary fix (more like optmization) until something better comes along,
+			// since it was removed from specification and supported only in FF
+			window.getDefaultComputedStyle( elem[ 0 ] ).display : jQuery.css( elem[ 0 ], "display" );
+
+	// We don't have any data stored on the element,
+	// so use "detach" method as fast way to get rid of the element
+	elem.detach();
+
+	return display;
+}
+
+/**
+ * Try to determine the default display value of an element
+ * @param {String} nodeName
+ */
+function defaultDisplay( nodeName ) {
+	var doc = document,
+		display = elemdisplay[ nodeName ];
+
+	if ( !display ) {
+		display = actualDisplay( nodeName, doc );
+
+		// If the simple way fails, read from inside an iframe
+		if ( display === "none" || !display ) {
+
+			// Use the already-created iframe if possible
+			iframe = (iframe || jQuery( "<iframe frameborder='0' width='0' height='0'/>" )).appendTo( doc.documentElement );
+
+			// Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
+			doc = ( iframe[ 0 ].contentWindow || iframe[ 0 ].contentDocument ).document;
+
+			// Support: IE
+			doc.write();
+			doc.close();
+
+			display = actualDisplay( nodeName, doc );
+			iframe.detach();
+		}
+
+		// Store the correct default display
+		elemdisplay[ nodeName ] = display;
+	}
+
+	return display;
+}
+
+
+(function() {
+	var a, shrinkWrapBlocksVal,
+		div = document.createElement( "div" ),
+		divReset =
+			"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;" +
+			"display:block;padding:0;margin:0;border:0";
+
+	// Setup
+	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
+	a = div.getElementsByTagName( "a" )[ 0 ];
+
+	a.style.cssText = "float:left;opacity:.5";
+
+	// Make sure that element opacity exists
+	// (IE uses filter instead)
+	// Use a regex to work around a WebKit issue. See #5145
+	support.opacity = /^0.5/.test( a.style.opacity );
+
+	// Verify style float existence
+	// (IE uses styleFloat instead of cssFloat)
+	support.cssFloat = !!a.style.cssFloat;
+
+	div.style.backgroundClip = "content-box";
+	div.cloneNode( true ).style.backgroundClip = "";
+	support.clearCloneStyle = div.style.backgroundClip === "content-box";
+
+	// Null elements to avoid leaks in IE.
+	a = div = null;
+
+	support.shrinkWrapBlocks = function() {
+		var body, container, div, containerStyles;
+
+		if ( shrinkWrapBlocksVal == null ) {
+			body = document.getElementsByTagName( "body" )[ 0 ];
+			if ( !body ) {
+				// Test fired too early or in an unsupported environment, exit.
+				return;
+			}
+
+			containerStyles = "border:0;width:0;height:0;position:absolute;top:0;left:-9999px";
+			container = document.createElement( "div" );
+			div = document.createElement( "div" );
+
+			body.appendChild( container ).appendChild( div );
+
+			// Will be changed later if needed.
+			shrinkWrapBlocksVal = false;
+
+			if ( typeof div.style.zoom !== strundefined ) {
+				// Support: IE6
+				// Check if elements with layout shrink-wrap their children
+				div.style.cssText = divReset + ";width:1px;padding:1px;zoom:1";
+				div.innerHTML = "<div></div>";
+				div.firstChild.style.width = "5px";
+				shrinkWrapBlocksVal = div.offsetWidth !== 3;
+			}
+
+			body.removeChild( container );
+
+			// Null elements to avoid leaks in IE.
+			body = container = div = null;
+		}
+
+		return shrinkWrapBlocksVal;
+	};
+
+})();
+var rmargin = (/^margin/);
+
+var rnumnonpx = new RegExp( "^(" + pnum + ")(?!px)[a-z%]+$", "i" );
+
+
+
+var getStyles, curCSS,
+	rposition = /^(top|right|bottom|left)$/;
+
+if ( window.getComputedStyle ) {
+	getStyles = function( elem ) {
+		return elem.ownerDocument.defaultView.getComputedStyle( elem, null );
+	};
+
+	curCSS = function( elem, name, computed ) {
+		var width, minWidth, maxWidth, ret,
+			style = elem.style;
+
+		computed = computed || getStyles( elem );
+
+		// getPropertyValue is only needed for .css('filter') in IE9, see #12537
+		ret = computed ? computed.getPropertyValue( name ) || computed[ name ] : undefined;
+
+		if ( computed ) {
+
+			if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+				ret = jQuery.style( elem, name );
+			}
+
+			// A tribute to the "awesome hack by Dean Edwards"
+			// Chrome < 17 and Safari 5.0 uses "computed value" instead of "used value" for margin-right
+			// Safari 5.1.7 (at least) returns percentage for a larger set of values, but width seems to be reliably pixels
+			// this is against the CSSOM draft spec: http://dev.w3.org/csswg/cssom/#resolved-values
+			if ( rnumnonpx.test( ret ) && rmargin.test( name ) ) {
+
+				// Remember the original values
+				width = style.width;
+				minWidth = style.minWidth;
+				maxWidth = style.maxWidth;
+
+				// Put in the new values to get a computed value out
+				style.minWidth = style.maxWidth = style.width = ret;
+				ret = computed.width;
+
+				// Revert the changed values
+				style.width = width;
+				style.minWidth = minWidth;
+				style.maxWidth = maxWidth;
+			}
+		}
+
+		// Support: IE
+		// IE returns zIndex value as an integer.
+		return ret === undefined ?
+			ret :
+			ret + "";
+	};
+} else if ( document.documentElement.currentStyle ) {
+	getStyles = function( elem ) {
+		return elem.currentStyle;
+	};
+
+	curCSS = function( elem, name, computed ) {
+		var left, rs, rsLeft, ret,
+			style = elem.style;
+
+		computed = computed || getStyles( elem );
+		ret = computed ? computed[ name ] : undefined;
+
+		// Avoid setting ret to empty string here
+		// so we don't default to auto
+		if ( ret == null && style && style[ name ] ) {
+			ret = style[ name ];
+		}
+
+		// From the awesome hack by Dean Edwards
+		// http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
+
+		// If we're not dealing with a regular pixel number
+		// but a number that has a weird ending, we need to convert it to pixels
+		// but not position css attributes, as those are proportional to the parent element instead
+		// and we can't measure the parent instead because it might trigger a "stacking dolls" problem
+		if ( rnumnonpx.test( ret ) && !rposition.test( name ) ) {
+
+			// Remember the original values
+			left = style.left;
+			rs = elem.runtimeStyle;
+			rsLeft = rs && rs.left;
+
+			// Put in the new values to get a computed value out
+			if ( rsLeft ) {
+				rs.left = elem.currentStyle.left;
+			}
+			style.left = name === "fontSize" ? "1em" : ret;
+			ret = style.pixelLeft + "px";
+
+			// Revert the changed values
+			style.left = left;
+			if ( rsLeft ) {
+				rs.left = rsLeft;
+			}
+		}
+
+		// Support: IE
+		// IE returns zIndex value as an integer.
+		return ret === undefined ?
+			ret :
+			ret + "" || "auto";
+	};
+}
+
+
+
+
+function addGetHookIf( conditionFn, hookFn ) {
+	// Define the hook, we'll check on the first run if it's really needed.
+	return {
+		get: function() {
+			var condition = conditionFn();
+
+			if ( condition == null ) {
+				// The test was not ready at this point; screw the hook this time
+				// but check again when needed next time.
+				return;
+			}
+
+			if ( condition ) {
+				// Hook not needed (or it's not possible to use it due to missing dependency),
+				// remove it.
+				// Since there are no other hooks for marginRight, remove the whole object.
+				delete this.get;
+				return;
+			}
+
+			// Hook needed; redefine it so that the support test is not executed again.
+
+			return (this.get = hookFn).apply( this, arguments );
+		}
+	};
+}
+
+
+(function() {
+	var a, reliableHiddenOffsetsVal, boxSizingVal, boxSizingReliableVal,
+		pixelPositionVal, reliableMarginRightVal,
+		div = document.createElement( "div" ),
+		containerStyles = "border:0;width:0;height:0;position:absolute;top:0;left:-9999px",
+		divReset =
+			"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;" +
+			"display:block;padding:0;margin:0;border:0";
+
+	// Setup
+	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
+	a = div.getElementsByTagName( "a" )[ 0 ];
+
+	a.style.cssText = "float:left;opacity:.5";
+
+	// Make sure that element opacity exists
+	// (IE uses filter instead)
+	// Use a regex to work around a WebKit issue. See #5145
+	support.opacity = /^0.5/.test( a.style.opacity );
+
+	// Verify style float existence
+	// (IE uses styleFloat instead of cssFloat)
+	support.cssFloat = !!a.style.cssFloat;
+
+	div.style.backgroundClip = "content-box";
+	div.cloneNode( true ).style.backgroundClip = "";
+	support.clearCloneStyle = div.style.backgroundClip === "content-box";
+
+	// Null elements to avoid leaks in IE.
+	a = div = null;
+
+	jQuery.extend(support, {
+		reliableHiddenOffsets: function() {
+			if ( reliableHiddenOffsetsVal != null ) {
+				return reliableHiddenOffsetsVal;
+			}
+
+			var container, tds, isSupported,
+				div = document.createElement( "div" ),
+				body = document.getElementsByTagName( "body" )[ 0 ];
+
+			if ( !body ) {
+				// Return for frameset docs that don't have a body
+				return;
+			}
+
+			// Setup
+			div.setAttribute( "className", "t" );
+			div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
+
+			container = document.createElement( "div" );
+			container.style.cssText = containerStyles;
+
+			body.appendChild( container ).appendChild( div );
+
+			// Support: IE8
+			// Check if table cells still have offsetWidth/Height when they are set
+			// to display:none and there are still other visible table cells in a
+			// table row; if so, offsetWidth/Height are not reliable for use when
+			// determining if an element has been hidden directly using
+			// display:none (it is still safe to use offsets if a parent element is
+			// hidden; don safety goggles and see bug #4512 for more information).
+			div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
+			tds = div.getElementsByTagName( "td" );
+			tds[ 0 ].style.cssText = "padding:0;margin:0;border:0;display:none";
+			isSupported = ( tds[ 0 ].offsetHeight === 0 );
+
+			tds[ 0 ].style.display = "";
+			tds[ 1 ].style.display = "none";
+
+			// Support: IE8
+			// Check if empty table cells still have offsetWidth/Height
+			reliableHiddenOffsetsVal = isSupported && ( tds[ 0 ].offsetHeight === 0 );
+
+			body.removeChild( container );
+
+			// Null elements to avoid leaks in IE.
+			div = body = null;
+
+			return reliableHiddenOffsetsVal;
+		},
+
+		boxSizing: function() {
+			if ( boxSizingVal == null ) {
+				computeStyleTests();
+			}
+			return boxSizingVal;
+		},
+
+		boxSizingReliable: function() {
+			if ( boxSizingReliableVal == null ) {
+				computeStyleTests();
+			}
+			return boxSizingReliableVal;
+		},
+
+		pixelPosition: function() {
+			if ( pixelPositionVal == null ) {
+				computeStyleTests();
+			}
+			return pixelPositionVal;
+		},
+
+		reliableMarginRight: function() {
+			var body, container, div, marginDiv;
+
+			// Use window.getComputedStyle because jsdom on node.js will break without it.
+			if ( reliableMarginRightVal == null && window.getComputedStyle ) {
+				body = document.getElementsByTagName( "body" )[ 0 ];
+				if ( !body ) {
+					// Test fired too early or in an unsupported environment, exit.
+					return;
+				}
+
+				container = document.createElement( "div" );
+				div = document.createElement( "div" );
+				container.style.cssText = containerStyles;
+
+				body.appendChild( container ).appendChild( div );
+
+				// Check if div with explicit width and no margin-right incorrectly
+				// gets computed margin-right based on width of container. (#3333)
+				// Fails in WebKit before Feb 2011 nightlies
+				// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
+				marginDiv = div.appendChild( document.createElement( "div" ) );
+				marginDiv.style.cssText = div.style.cssText = divReset;
+				marginDiv.style.marginRight = marginDiv.style.width = "0";
+				div.style.width = "1px";
+
+				reliableMarginRightVal =
+					!parseFloat( ( window.getComputedStyle( marginDiv, null ) || {} ).marginRight );
+
+				body.removeChild( container );
+			}
+
+			return reliableMarginRightVal;
+		}
+	});
+
+	function computeStyleTests() {
+		var container, div,
+			body = document.getElementsByTagName( "body" )[ 0 ];
+
+		if ( !body ) {
+			// Test fired too early or in an unsupported environment, exit.
+			return;
+		}
+
+		container = document.createElement( "div" );
+		div = document.createElement( "div" );
+		container.style.cssText = containerStyles;
+
+		body.appendChild( container ).appendChild( div );
+
+		div.style.cssText =
+			"-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;" +
+				"position:absolute;display:block;padding:1px;border:1px;width:4px;" +
+				"margin-top:1%;top:1%";
+
+		// Workaround failing boxSizing test due to offsetWidth returning wrong value
+		// with 
