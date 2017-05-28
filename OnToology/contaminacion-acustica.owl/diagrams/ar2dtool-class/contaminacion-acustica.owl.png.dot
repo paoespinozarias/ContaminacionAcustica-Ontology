@@ -34,28 +34,45 @@ node [shape = rectangle, color="orange"]; ":Unit_of_measure" "skos:Concept" "wgs
 	"ssn:hasSurvivalRange" -> "ssn:hasProperty" [ label = "rdfs:subPropertyOf" ];
 	"NULL" -> "ssn:MeasurementCapability" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "ssn:qualityOfObservation" [ label = "owl:onProperty" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fd5" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:System" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "ssn:isPropertyOf" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fd4" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:hasMeasurementCapability" [ label = "rdf:first" ];
 	"NULL" -> "time:Sunday" [ label = "rdf:first" ];
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fcd" [ label = "rdf:rest" ];
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fe8" [ label = "rdf:rest" ];
+	"NULL" -> "ssn:hasMeasurementCapability" [ label = "rdf:first" ];
+	"NULL" -> "time:Sunday" [ label = "rdf:first" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "time:unitSecond" [ label = "rdf:first" ];
 	"NULL" -> "time:second" [ label = "owl:onProperty" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fea" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:hasDeployment" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:FeatureOfInterest" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "time:month" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fd8" [ label = "rdf:rest" ];
+=======
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:Sensor" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "ssn:hasSurvivalRange" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:implements" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:observationSamplingTime" [ label = "owl:onProperty" ];
 	"NULL" -> "time:Saturday" [ label = "rdf:first" ];
 	"NULL" -> "ssn:System" [ label = "owl:someValuesFrom" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fd5" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:madeObservation" [ label = "rdf:first" ];
 	"NULL" -> "time:Friday" [ label = "rdf:first" ];
 	"NULL" -> "ssn:Input" [ label = "owl:allValuesFrom" ];
+=======
+	"NULL" -> "time:Friday" [ label = "rdf:first" ];
+	"NULL" -> "ssn:Input" [ label = "owl:allValuesFrom" ];
+	"NULL" -> "ssn:madeObservation" [ label = "rdf:first" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "DUL:includesEvent" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:observedProperty" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:Output" [ label = "owl:allValuesFrom" ];
@@ -69,23 +86,38 @@ node [shape = rectangle, color="orange"]; ":Unit_of_measure" "skos:Concept" "wgs
 	"NULL" -> "ssn:observes" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:ObservationValue" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "time:minutes" [ label = "owl:onProperty" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fd7" [ label = "rdf:rest" ];
 	"NULL" -> "DUL:Object" [ label = "rdf:first" ];
 	"NULL" -> "ssn:hasMeasurementCapability" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:sensingMethodUsed" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:inDeployment" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:DeploymentRelatedProcess" [ label = "owl:allValuesFrom" ];
+<<<<<<< HEAD
 	"NULL" -> "ssn:forProperty" [ label = "owl:onProperty" ];
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fd4" [ label = "rdf:rest" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:Deployment" [ label = "owl:allValuesFrom" ];
-	"NULL" -> "time:dayOfYear" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:inCondition" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
+=======
+	"NULL" -> "time:dayOfYear" [ label = "owl:onProperty" ];
+	"NULL" -> "ssn:forProperty" [ label = "owl:onProperty" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fab" [ label = "rdf:rest" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "time:unitWeek" [ label = "rdf:first" ];
 	"NULL" -> "DUL:isRegionFor" [ label = "owl:onProperty" ];
 	"NULL" -> "time:weeks" [ label = "owl:onProperty" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fe7" [ label = "rdf:rest" ];
 	"NULL" -> "time:unitDay" [ label = "rdf:first" ];
 	"NULL" -> "ssn:hasProperty" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7f9c" [ label = ":ead" ];
 	"NULL" -> "ssn:Stimulus" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7feb" [ label = "rdf:rest" ];
+=======
+	"NULL" -> "ssn:Stimulus" [ label = "owl:someValuesFrom" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:Sensor" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "time:dayOfWeek" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:Output" [ label = "owl:someValuesFrom" ];
@@ -108,6 +140,7 @@ node [shape = rectangle, color="orange"]; ":Unit_of_measure" "skos:Concept" "wgs
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fe7" [ label = "rdf:rest" ];
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fab" [ label = "rdf:rest" ];
 	"NULL" -> "time:Wednesday" [ label = "rdf:first" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fd9" [ label = "rdf:rest" ];
 	"NULL" -> "time:year" [ label = "owl:onProperty" ];
 	"NULL" -> "time:unitType" [ label = "owl:onProperty" ];
 	"NULL" -> "time:seconds" [ label = "owl:onProperty" ];
@@ -116,50 +149,81 @@ node [shape = rectangle, color="orange"]; ":Unit_of_measure" "skos:Concept" "wgs
 	"NULL" -> "ssn:observedBy" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:FeatureOfInterest" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "ssn:attachedSystem" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fd6" [ label = "rdf:rest" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:FeatureOfInterest" [ label = "owl:onClass" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fad" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:Stimulus" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "ssn:onPlatform" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:OperatingRange" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "time:unitHour" [ label = "rdf:first" ];
 	"NULL" -> "time:hour" [ label = "owl:onProperty" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fe9" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:Sensing" [ label = "owl:onClass" ];
 	"NULL" -> "ssn:isProducedBy" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:hasMeasurementProperty" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:hasSubSystem" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:isProxyFor" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:Platform" [ label = "owl:allValuesFrom" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7feb" [ label = "rdf:rest" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fe6" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:SurvivalProperty" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fd9" [ label = "rdf:rest" ];
 	"NULL" -> "time:unitMonth" [ label = "owl:hasValue" ];
 	"NULL" -> "ssn:Property" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "time:Monday" [ label = "rdf:first" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fea" [ label = "rdf:rest" ];
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fce" [ label = "owl:unionOf" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "time:unitYear" [ label = "rdf:first" ];
 	"NULL" -> "time:day" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:Property" [ label = "owl:onClass" ];
 	"NULL" -> "ssn:deployedOnPlatform" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fd6" [ label = "rdf:rest" ];
+=======
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:Sensing" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "ssn:detects" [ label = "owl:onProperty" ];
 	"NULL" -> "time:Interval" [ label = "rdf:first" ];
 	"NULL" -> "ssn:Sensing" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "ssn:SurvivalRange" [ label = "owl:allValuesFrom" ];
+<<<<<<< HEAD
 	"NULL" -> "ssn:MeasurementProperty" [ label = "owl:allValuesFrom" ];
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7ffb" [ label = "rdf:rest" ];
+	"NULL" -> "ssn:observationResultTime" [ label = "owl:onProperty" ];
+	"NULL" -> "ssn:MeasurementProperty" [ label = "owl:allValuesFrom" ];
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fcd" [ label = "rdf:rest" ];
+	"NULL" -> "time:years" [ label = "owl:onProperty" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "time:Instant" [ label = "rdf:first" ];
 	"NULL" -> "time:years" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:observationResultTime" [ label = "owl:onProperty" ];
 	"NULL" -> "time:week" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fe9" [ label = "rdf:rest" ];
+=======
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:hasValue" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:forProperty" [ label = "rdf:first" ];
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fad" [ label = "rdf:rest" ];
 	"NULL" -> "ssn:SensorOutput" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "ssn:featureOfInterest" [ label = "owl:onProperty" ];
+<<<<<<< HEAD
 	"NULL" -> "-2b60d278:15c4fa8b8b6:-7fe6" [ label = "rdf:rest" ];
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7f9c" [ label = ":ead" ];
+>>>>>>> refs/remotes/origin/master
 	"NULL" -> "ssn:OperatingProperty" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "time:days" [ label = "owl:onProperty" ];
 	"NULL" -> "ssn:Condition" [ label = "owl:allValuesFrom" ];
 	"NULL" -> "ssn:observedProperty" [ label = "rdf:first" ];
+<<<<<<< HEAD
 	"ssn:SensorInput" -> "ssn:Stimulus" [ label = "owl:equivalentClass" ];
 	"ssn:onPlatform" -> "DUL:hasLocation" [ label = "rdfs:subPropertyOf" ];
 	"time:intervalBefore" -> "time:before" [ label = "rdfs:subPropertyOf" ];
@@ -172,6 +236,21 @@ node [shape = rectangle, color="orange"]; ":Unit_of_measure" "skos:Concept" "wgs
 	"ssn:observationSamplingTime" -> "DUL:hasRegion" [ label = "rdfs:subPropertyOf" ];
 	"time:DayOfWeek" -> "-2b60d278:15c4fa8b8b6:-7fda" [ label = "owl:oneOf" ];
 	"time:TemporalUnit" -> "-2b60d278:15c4fa8b8b6:-7fec" [ label = "owl:oneOf" ];
+=======
+	"NULL" -> "d9e91e3:15c4fa79b8c:-7fd8" [ label = "rdf:rest" ];
+	"ssn:SensorInput" -> "ssn:Stimulus" [ label = "owl:equivalentClass" ];
+	"ssn:onPlatform" -> "DUL:hasLocation" [ label = "rdfs:subPropertyOf" ];
+	"time:intervalBefore" -> "time:before" [ label = "rdfs:subPropertyOf" ];
+	"time:TemporalEntity" -> "d9e91e3:15c4fa79b8c:-7ffc" [ label = "owl:unionOf" ];
+	"ssn:observedBy" -> "DUL:includesObject" [ label = "rdfs:subPropertyOf" ];
+	"ssn:observes" -> "d9e91e3:15c4fa79b8c:-7fac" [ label = "owl:propertyChainAxiom" ];
+	"ssn:observes" -> "d9e91e3:15c4fa79b8c:-7fae" [ label = "owl:propertyChainAxiom" ];
+	"ssn:featureOfInterest" -> "DUL:isSettingFor" [ label = "rdfs:subPropertyOf" ];
+	"ssn:hasValue" -> "DUL:hasRegion" [ label = "rdfs:subPropertyOf" ];
+	"ssn:observationSamplingTime" -> "DUL:hasRegion" [ label = "rdfs:subPropertyOf" ];
+	"time:DayOfWeek" -> "d9e91e3:15c4fa79b8c:-7fda" [ label = "owl:oneOf" ];
+	"time:TemporalUnit" -> "d9e91e3:15c4fa79b8c:-7fec" [ label = "owl:oneOf" ];
+>>>>>>> refs/remotes/origin/master
 	"ssn:endTime" -> "DUL:hasRegion" [ label = "rdfs:subPropertyOf" ];
 	"ssn:hasOperatingProperty" -> "ssn:hasProperty" [ label = "rdfs:subPropertyOf" ];
 	"ssn:hasSurvivalProperty" -> "ssn:hasProperty" [ label = "rdfs:subPropertyOf" ];
