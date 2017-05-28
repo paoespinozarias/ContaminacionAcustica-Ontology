@@ -15,8 +15,8 @@
     <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica">
         <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+        <dc:title xml:lang="es">Contaminación Acústica</dc:title>
         <dc:description xml:lang="es">Este vocabulario extiende la W3C Semantic Sensor Network Ontology (SSN) con propiedades para representar los datos de la contaminación acústica. También se extiende la OWL Ontology of Time (OWL-Time)  para representar el tiempo y la WGS84 Geo Positioning para representar la posición en el espacio a través de la longitud, latitud y altitud</dc:description>
-        <dc:title xml:lang="es">Ontología para Contaminación Acústica</dc:title>
         <dc:rights>Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
         <ns:license>http://creativecommons.org/licenses/by/4.0/</ns:license>
     </owl:Ontology>
@@ -234,6 +234,8 @@ above the local reference ellipsoid).</rdfs:comment>
 
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">
         <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:comment xml:lang="es">Nivel percentil de ruido que ha sido medido por el sensor</rdfs:comment>
+        <rdfs:comment xml:lang="en">Percentil Noise Level</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de Ruido en Percentiles</rdfs:label>
     </owl:Class>
     
