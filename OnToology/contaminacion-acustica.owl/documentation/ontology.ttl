@@ -43,7 +43,7 @@ foaf:based_near
       ns:license "http://creativecommons.org/licenses/by/4.0/" ;
       dc:description "Este vocabulario extiende la W3C Semantic Sensor Network Ontology (SSN) con propiedades para representar los datos de la contaminación acústica. También se extiende la OWL Ontology of Time (OWL-Time)  para representar el tiempo y la WGS84 Geo Positioning para representar la posición en el espacio a través de la longitud, latitud y altitud"@es ;
       dc:rights "Creative Commons Attribution 4.0 International (CC BY 4.0)" ;
-      dc:title "Ontología para Contaminación Acústica"@es ;
+      dc:title "Contaminación Acústica"@es ;
       owl:imports <http://www.w3.org/2006/time> , <http://purl.oclc.org/NET/ssnx/ssn> .
 
 wgs84_pos:Point
@@ -88,6 +88,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 :PercentilNoiseLevel
       a       owl:Class ;
+      rdfs:comment "Nivel percentil de ruido que ha sido medido por el sensor"@es , "Percentil Noise Level"@en ;
       rdfs:label "Nivel de Ruido en Percentiles"@es ;
       rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
 
