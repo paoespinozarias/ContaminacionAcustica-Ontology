@@ -8,10 +8,6 @@ This section provides details for each class and property defined by contaminaci
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel">Average Noise Level</a>
       </li>
       <li>
-         <a href="#PercentilNoiseLevel"
-            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Nivel de Ruido en Percentiles</a>
-      </li>
-      <li>
          <a href="#NoiseLevel"
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel">Noise Level</a>
       </li>
@@ -20,11 +16,21 @@ This section provides details for each class and property defined by contaminaci
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseSensor">Noise Sensor</a>
       </li>
       <li>
+         <a href="#PercentilNoiseLevel"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
+      </li>
+      <li>
          <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#Point" title="http://www.w3.org/2003/01/geo/wgs84_pos#Point">point</a>
       </li>
       <li>
          <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
             title="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">SpatialThing</a>
+      </li>
+      <li>
+         <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
+            title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">
+            <span>unit of measure</span>
+         </a>
       </li>
       <li>
          <a href="#Weighting"
@@ -40,23 +46,6 @@ This section provides details for each class and property defined by contaminaci
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel</p>
       <div class="comment">
          <span class="markdown">Nivel medio de ruido que ha sido medido por el sensor.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <span class="dotted" title="http://purl.oclc.org/NET/ssnx/ssn#Property">property</span>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="PercentilNoiseLevel">
-      <h3>Nivel de Ruido en Percentiles<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel</p>
-      <div class="comment">
-         <span class="markdown">Percentil Noise Level</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -104,6 +93,23 @@ This section provides details for each class and property defined by contaminaci
             <sup class="type-op" title="object property">op</sup>, <a href="#lastCalibrationDate"
                title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate">last calibration date</a>
             <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PercentilNoiseLevel">
+      <h3>Percentil Noise Level<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel</p>
+      <div class="comment">
+         <span class="markdown">Nivel percentil de ruido que ha sido medido por el sensor</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://purl.oclc.org/NET/ssnx/ssn#Property">property</span>
          </dd>
       </dl>
    </div>
@@ -156,6 +162,30 @@ This section provides details for each class and property defined by contaminaci
          <dd>
             <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#location" title="http://www.w3.org/2003/01/geo/wgs84_pos#location">location</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">
+      <h3>unit of measure<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure</p>
+      <div class="comment">
+         <span class="markdown">A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called "metre".</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasUnitOfMeasure"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#hasUnitOfMeasure">has unit of measure</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://dbpedia.org/resource/Decibel" title="http://dbpedia.org/resource/Decibel">decibel</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -283,8 +313,8 @@ above the local reference ellipsoid).</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">unit of measure</span>
+               <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
+                  title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">unit of measure</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -502,8 +532,8 @@ above the local reference ellipsoid).</span>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted"
-                  title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">unit of measure</span>
+            <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
+               title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">unit of measure</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
