@@ -235,8 +235,8 @@ above the local reference ellipsoid).</rdfs:comment>
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">
         <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
         <rdfs:comment xml:lang="es">Nivel percentil de ruido que ha sido medido por el sensor</rdfs:comment>
-        <rdfs:comment xml:lang="en">Percentil Noise Level</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de Ruido en Percentiles</rdfs:label>
+        <rdfs:label xml:lang="en">Percentil Noise Level</rdfs:label>
     </owl:Class>
     
 
@@ -290,7 +290,10 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
     <!-- http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure -->
 
-    <owl:Class rdf:about="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+    <owl:Class rdf:about="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">
+        <rdfs:comment xml:lang="en">A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called &quot;metre&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Una unidad de medida es una magnitud definida de una cantidad, definida y adoptada por convención y / o por ley. Se utiliza como estándar para medir la misma cantidad, donde cualquier otro valor de la cantidad puede expresarse como un simple múltiplo de la unidad de medida. Por ejemplo, longitud es una cantidad; El metro es una unidad de longitud que representa una longitud predeterminada definida. Cuando decimos 10 metros (o 10 m), en realidad decimos 10 veces la longitud predeterminada definida llamada &quot;metro&quot;.</rdfs:comment>
+    </owl:Class>
     
 
 
