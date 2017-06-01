@@ -28,9 +28,7 @@ This section provides details for each class and property defined by contaminaci
       </li>
       <li>
          <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
-            title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">
-            <span>unit of measure</span>
-         </a>
+            title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">Unit of Measure</a>
       </li>
       <li>
          <a href="#Weighting"
@@ -50,7 +48,21 @@ This section provides details for each class and property defined by contaminaci
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://purl.oclc.org/NET/ssnx/ssn#Property">property</span>
+            <a href="#NoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel">Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Ld"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Ld">Day noise level</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Lden"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Lden">Day-evening-night noise level</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Le"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Le">Evening noise level</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Ln"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Ln">Night noise level</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -68,6 +80,14 @@ This section provides details for each class and property defined by contaminaci
          <dt>has super-classes</dt>
          <dd>
             <span class="dotted" title="http://purl.oclc.org/NET/ssnx/ssn#Property">property</span>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#AverageNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel">Average Noise Level</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PercentilNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -89,7 +109,7 @@ This section provides details for each class and property defined by contaminaci
          <dt>is in domain of</dt>
          <dd>
             <a href="#belongsToSensorClass"
-               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass">belongs to Sensor Class</a>
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass">belongs to sensor class</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#lastCalibrationDate"
                title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate">last calibration date</a>
             <sup class="type-dp" title="data property">dp</sup>
@@ -104,12 +124,28 @@ This section provides details for each class and property defined by contaminaci
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel</p>
       <div class="comment">
-         <span class="markdown">Nivel percentil de ruido que ha sido medido por el sensor</span>
+         <span class="markdown">Nivel de presión sonora ponderado en frecuencia y ponderado en el tiempo superado el N% de tiempo del intervalo considerado</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://purl.oclc.org/NET/ssnx/ssn#Property">property</span>
+            <a href="#NoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel">Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#L01"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L01">Nivel de ruido sobre el 1%</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#L10"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L10">Nivel de ruido sobre el 10%</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#L50"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L50">Nivel de ruido sobre el 50%</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#L90"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L90">Nivel de ruido sobre el 90%</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#L99"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L99">Nivel de ruido sobre el 99%</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -121,7 +157,13 @@ This section provides details for each class and property defined by contaminaci
       <p>
          <strong>IRI:</strong> http://www.w3.org/2003/01/geo/wgs84_pos#Point</p>
       <div class="comment">
-         <span class="markdown">A point, typically described using a coordinate system relative to Earth, such as WGS84.
+         <span class="markdown"> 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
   </span>
       </div>
       <dl class="description">
@@ -154,7 +196,7 @@ This section provides details for each class and property defined by contaminaci
          <dt>is in domain of</dt>
          <dd>
             <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#alt" title="http://www.w3.org/2003/01/geo/wgs84_pos#alt">altitud</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#lat" title="http://www.w3.org/2003/01/geo/wgs84_pos#lat">latitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#lat" title="http://www.w3.org/2003/01/geo/wgs84_pos#lat">latitud</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#long" title="http://www.w3.org/2003/01/geo/wgs84_pos#long">longitud</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -166,15 +208,19 @@ This section provides details for each class and property defined by contaminaci
       </dl>
    </div>
    <div class="entity" id="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">
-      <h3>unit of measure<sup class="type-c" title="class">c</sup>
+      <h3>Unit of Measure<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure</p>
       <div class="comment">
-         <span class="markdown">A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called "metre".</span>
+         <span class="markdown">A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called "metre". (definition taken from om ontology)</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica</dd>
+      </dl>
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
@@ -230,7 +276,9 @@ This section provides details for each class and property defined by contaminaci
       </li>
       <li>
          <a href="#belongsToSensorClass"
-            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass">belongs to Sensor Class</a>
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass">
+            <span>belongs to sensor class</span>
+         </a>
       </li>
       <li>
          <a href="#hasUnitOfMeasure"
@@ -241,10 +289,12 @@ This section provides details for each class and property defined by contaminaci
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#isWeightingWith">is weightin with</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#lat" title="http://www.w3.org/2003/01/geo/wgs84_pos#lat">latitude</a>
+         <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#lat" title="http://www.w3.org/2003/01/geo/wgs84_pos#lat">latitud</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#location" title="http://www.w3.org/2003/01/geo/wgs84_pos#location">location</a>
+         <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#location" title="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+            <span>location</span>
+         </a>
       </li>
       <li>
          <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#long" title="http://www.w3.org/2003/01/geo/wgs84_pos#long">longitud</a>
@@ -273,15 +323,12 @@ above the local reference ellipsoid).</span>
       </div>
    </div>
    <div class="entity" id="belongsToSensorClass">
-      <h3>belongs to Sensor Class<sup class="type-op" title="object property">op</sup>
+      <h3>belongs to sensor class<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass</p>
-      <div class="comment">
-         <span class="markdown">Un Sensor tiene unas características específicas según la Clase a la que pertenece. Puede ser de Clase I o II o no pertenecer a ninguna Clase.</span>
-      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -314,7 +361,7 @@ above the local reference ellipsoid).</span>
             <dt>has range</dt>
             <dd>
                <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
-                  title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">unit of measure</a>
+                  title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">Unit of Measure</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -347,7 +394,7 @@ above the local reference ellipsoid).</span>
       </div>
    </div>
    <div class="entity" id="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-      <h3>latitude<sup class="type-op" title="object property">op</sup>
+      <h3>latitud<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
@@ -374,27 +421,11 @@ above the local reference ellipsoid).</span>
       </h3>
       <p>
          <strong>IRI:</strong> http://www.w3.org/2003/01/geo/wgs84_pos#location</p>
-      <div class="comment">
-         <span class="markdown">The relation between something and the point, 
- or other geometrical thing in space, where it is.  For example, the realtionship between
- a radio tower and a Point with a given lat and long.
- Or a relationship between a park and its outline as a closed arc of points, or a road and
- its location as a arc (a sequence of points).
- Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
- an accuracy appropriate for the size of the object and uses such as mapping .
- </span>
-      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
                <span class="dotted" title="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice">sensing device</span>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
-                  title="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">SpatialThing</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is also defined as</dt>
             <dd>
@@ -469,9 +500,45 @@ above the local reference ellipsoid).</span>
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#ClaseII">Clase II</a>
       </li>
       <li>
+         <a href="#Ld"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Ld">Day noise level</a>
+      </li>
+      <li>
+         <a href="#Lden"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Lden">Day-evening-night noise level</a>
+      </li>
+      <li>
          <a href="#http://dbpedia.org/resource/Decibel" title="http://dbpedia.org/resource/Decibel">
             <span>decibel</span>
          </a>
+      </li>
+      <li>
+         <a href="#Le"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Le">Evening noise level</a>
+      </li>
+      <li>
+         <a href="#Ln"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Ln">Night noise level</a>
+      </li>
+      <li>
+         <a href="#L01"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L01">Nivel de ruido sobre el 1%</a>
+      </li>
+      <li>
+         <a href="#L10"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L10">Nivel de ruido sobre el 10%</a>
+      </li>
+      <li>
+         <a href="#L50"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L50">Nivel de ruido sobre el 50%</a>
+      </li>
+      <li>
+         <a href="#L90"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L90">Nivel de ruido sobre el 90%</a>
+      </li>
+      <li>
+         <a href="#L99"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L99">Nivel de ruido sobre el 99%</a>
       </li>
       <li>
          <a href="#PonderacionA"
@@ -494,7 +561,7 @@ above the local reference ellipsoid).</span>
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#ClaseI</p>
       <div class="comment">
-         <span class="markdown">Sensor que cumple las características de precisión más restrictivas definidas en la normativa IEC. Esta clase de sensores tiene menores márgenes de tolerancia en su rango de medida.</span>
+         <span class="markdown">Sensor que cumple las características de precisión más restrictivas definidas en la normativa IEC. Esta clase de sensores tiene menores márgenes de tolerancia en su rango de medida. Los instrumentos de Clase I se especifican dentro del rango de temperaturas del aire desde -10 ºC  hasta  +50 ºC.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
@@ -512,12 +579,50 @@ above the local reference ellipsoid).</span>
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#ClaseII</p>
       <div class="comment">
-         <span class="markdown">Sensor que cumple las características de precisión menos restrictivas definidas en la normativa IEC. Esta clase de sensores tiene mayores márgenes de tolerancia en su rango de medida.</span>
+         <span class="markdown">Sensor que cumple las características de precisión menos restrictivas definidas en la normativa IEC. Esta clase de sensores tiene mayores márgenes de tolerancia en su rango de medida. Los instrumentos de Clase II se especifican dentro del rango de temperaturas del aire desde 0 ºC  hasta  +40 ºC.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
             <span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Ld">
+      <h3>Day noise level<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Ld</p>
+      <div class="comment">
+         <span class="markdown">Nivel de ruido día que se define como el valor medio del sonido medido en el periodo diurno (7-19 horas)</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AverageNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel">Average Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Lden">
+      <h3>Day-evening-night noise level<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Lden</p>
+      <div class="comment">
+         <span class="markdown">Valor medio del sonido medido dentro de un período de 24 horas, en el que se incluyen los valores obtenidos en Ld, Le, Ln.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AverageNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel">Average Noise Level</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -533,7 +638,140 @@ above the local reference ellipsoid).</span>
          <dt>belongs to</dt>
          <dd>
             <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
-               title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">unit of measure</a>
+               title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">Unit of Measure</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Le">
+      <h3>Evening noise level<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Le</p>
+      <div class="comment">
+         <span class="markdown">Valor medio del  sonido medido en el periodo vespertino (19 - 23 horas)</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AverageNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel">Average Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Ln">
+      <h3>Night noise level<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Ln</p>
+      <div class="comment">
+         <span class="markdown">Valor medio del sonido medido en el periodo nocturno (23 - 7 horas)</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AverageNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel">Average Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="L01">
+      <h3>Nivel de ruido sobre el 1%<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L01</p>
+      <div class="comment">
+         <span class="markdown">Nivel de ruido que se sobrepasa durante el 1% del tiempo de observación.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#PercentilNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="L10">
+      <h3>Nivel de ruido sobre el 10%<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L10</p>
+      <div class="comment">
+         <span class="markdown">Nivel de ruido que se sobrepasa durante el 10% del tiempo de observación</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#PercentilNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="L50">
+      <h3>Nivel de ruido sobre el 50%<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L50</p>
+      <div class="comment">
+         <span class="markdown">Nivel de ruido que se sobrepasa durante el 50% del tiempo de observación</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#PercentilNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="L90">
+      <h3>Nivel de ruido sobre el 90%<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L90</p>
+      <div class="comment">
+         <span class="markdown">Nivel de ruido que se sobrepasa durante el 90% del tiempo de observación</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#PercentilNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="L99">
+      <h3>Nivel de ruido sobre el 99%<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L99</p>
+      <div class="comment">
+         <span class="markdown">Nivel de ruido que se sobrepasa durante el 99% del tiempo de observación</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#PercentilNoiseLevel"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">Percentil Noise Level</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
