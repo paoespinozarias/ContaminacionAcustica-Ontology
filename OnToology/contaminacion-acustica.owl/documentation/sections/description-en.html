@@ -1,35 +1,46 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head></head>
+<html><head>
+</head>
 <body>
 <img>
 <h2 id="desc" class="list">Contaminacion Acustica:
 Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>La Figura 1 muestra las clases y propiedades de la ontologia de
-Contaminacion Acustica<br></p><br>
+<p>La Figura 1 muestra las clases y propiedades de la ontologia
+de
+Contaminacion Acustica<br>
+</p>
+<br>
 <center><img src="resources/images/ContaminacionAcustica.png"><figcaption>Figura
 1. - Ontologia de Contaminacion Acustica.</figcaption>
 </center>
-<p style="text-align: justify;">Como se puede apreciar en la figura
+<p style="text-align: justify;">Como se puede apreciar en
+la figura
 anterior esta ontologia ha extendido ontologias que ya existian
 previamente, tal es el caso de la W3C Semantic Sensor Network Ontology
 (SSN) con propiedades especificas para representar los datos de la
-contaminacion acustica, la OWL Ontology of Time (OWL-Time)&nbsp; para
+contaminacion acustica, la OWL Ontology of Time (OWL-Time)&nbsp;
+para
 representar el tiempo y la WGS84 Geo Positioning Ontology (WGS84_POS)
 para representar la posicion en el espacio a traves de la longitud,
-latitud y altitud.</p><p style="text-align: justify;">Asi mismo en la
+latitud y altitud.</p>
+<p style="text-align: justify;">Asi mismo en la
 Figura 1 se puede apreciar que se ha organizado la ontologia en cuatro
 modulos que representan los subdominios que estan relacionados con las
 mediciones de contaminacion acustica. El modulo Sensor
-permite&nbsp;modelar el sensor de ruido (noise:NoiseSensor) que es el
+permite&nbsp;modelar el sensor de ruido (noise:NoiseSensor) que es
+el
 encargado de recopilar las mediciones de ruido en el ambiente. El
 modulo Measurement permite modelar las propiedades que son objeto de
 las mediciones del sensor. El modulo Time permite representar los
 intervalos e instantes de tiempo en los que se han realizado las
 mediciones. El modulo Location permite representar el posicionamiento
-geografico.</p><p style="text-align: justify;">La Figura 2 muestra las instancias que han sido incluidas en
+geografico.</p>
+<p style="text-align: justify;">La Figura 2 muestra las
+instancias que han sido incluidas en
 la ontologia para representar los tipos
 de ponderaciones, clases de sensores, niveles de ruido y la unidad de
-medida en la que se registran las mediciones (Decibelio).</p><p></p>
+medida en la que se registran las mediciones (Decibelio).</p>
+<p></p>
 <center><img src="resources/images/ContaminacionAcustica-Instancias.png">
 <figcaption>Figura 2. - Instancias de la ontologia Contaminacion
 Acustica.</figcaption>
@@ -39,7 +50,6 @@ Acustica.</figcaption>
 ejemplo de como poblar la ontologia. En
 este escenario se representa un sensor que recopila las mediciones del
 nivel medio de ruido durante un mes.&nbsp;</p>
-
 <p style="text-align: justify;">El escenario corresponde
 al sensor ex:NoiseSensor01 que ha medido el nivel
 de ruido
@@ -48,7 +58,8 @@ a la que pertenece el sensor y que determina sus
 caracteristicas tecnicas ha sido representada a traves de la propiedad
 noise:belongsToSensorClass que enlaza al sensor con la
 instancia&nbsp;noise:ClassI. La ultima
-fecha en que el sensor fue calibrado se representa&nbsp;a traves del
+fecha en que el sensor fue calibrado se representa&nbsp;a traves
+del
 valor de la propiedad datatype noise:lastCalibrationDate y la
 localizacion geografica en la que esta
 ubicado se representa a traves de la
@@ -56,7 +67,6 @@ instancia&nbsp;ex:NoiseSensor01Location y los valores de las
 coordenadas geograficas indicados en las
 propiedades&nbsp;wgs84_pos:long, wgs84_pos:lat y wgs84_pos:alt
 (longitud, latitud y altitud respectivamente).</p>
-
 <p style="text-align: justify;">Para indicar el
 intervalo de tiempo (abril del 2017) en&nbsp;que el sensor realizo
 la medicion&nbsp;se utiliza la instancia
@@ -65,7 +75,8 @@ inicio y un fin que se representan con las instancias de instantes de
 tiempo ex:Instant20140401 y ex:Instant20170430 y sus valores son
 determinados mediante la propiedad datatype time:inXSDDateTime siendo
 "2017-04-01T00:00:00+01:00" ^^xsd:dateTime y
-"2017-04-30T23:59:59+01:00" ^^xsd:dateTime respectivamente.</p><p style="text-align: justify;">La
+"2017-04-30T23:59:59+01:00" ^^xsd:dateTime respectivamente.</p>
+<p style="text-align: justify;">La
 observacion realizada se representa con la instancia
 ex:NoiseSensor01Observation_LdInterval201404 y se relaciona con la
 instancia de la propiedad observada noise:Ld&nbsp;a traves de
@@ -74,8 +85,10 @@ determinada caracteristica de interes que en este caso se representa
 mediante la instancia ex:FeatureOfInterestPaseoDeRecoletos, que
 corresponde a la localizacion de Paseo de Recoletos, y las coordenadas
 geograficas de su ubicacion indicadas a traves de los valores de
-&nbsp;wgs84_pos:long, wgs84_pos:lat y wgs84_pos:alt (longitud, latitud
-y altitud respectivamente).</p><p style="text-align: justify;">La
+&nbsp;wgs84_pos:long, wgs84_pos:lat y wgs84_pos:alt (longitud,
+latitud
+y altitud respectivamente).</p>
+<p style="text-align: justify;">La
 observacion realizada se relaciona a traves de la propiedad
 ssn:observationResult con la
 instancia&nbsp;ex:NoiseSensor01SensorOutput_Observation_LdInterval201404
@@ -84,7 +97,8 @@ salida del sensor se relaciona mediante la propiedad ssn:hasValue con
 la instancia de salida de la observacion
 ex:NoiseSensor01SensorObservationValue_Observation_LdInterval201404 y
 permite establecer el valor de la medicion a traves de la propiedad
-datatype rdf:value que este ejemplo tiene el valor "67.3"^^xsd:decimal.</p><p style="text-align: justify;">La
+datatype rdf:value que este ejemplo tiene el valor "67.3"^^xsd:decimal.</p>
+<p style="text-align: justify;">La
 ponderacion con la que la que el sensor realizo la observacion se
 representa mediante la propiedad noise:isWeightingWith que enlaza el
 valor de la observacion con la instancia noise:PonderacionA que
@@ -96,6 +110,11 @@ una instancia de om:UnitOfMeasure que para el ambito de la
 contaminacion acustica es el Decibelio que se ha representado mediante
 la instancia dbpedia:Decibel.</p>
 <center><img src="resources/images/Ejemplo.png"><figcaption>Figura
-3. - Ejemplo de la ontologia.</figcaption>
-</center>
+3. - Ejemplo de la ontologia.<br>
+<br>
+</figcaption>
+<div style="text-align: justify;"><figcaption></figcaption>El
+codigo&nbsp;en formato Turttle se puede observar en <a href="resources/examples/Ejemplo1.owl" target="_blank">ejemplo</a><br>
+<figcaption></figcaption></div>
+<figcaption></figcaption></center>
 </body></html>
