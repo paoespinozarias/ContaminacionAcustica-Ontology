@@ -7,6 +7,7 @@
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
@@ -16,11 +17,11 @@
         <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
         <ns:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://creativecommons.org/licenses/by/4.0/</ns:license>
-        <dc:contributor xml:lang="es">Mariano Fernández López (Ontology Engineering Group)</dc:contributor>
+        <dc:contributor xml:lang="es">Mariano Fernández López</dc:contributor>
         <dc:contributor xml:lang="es">María Poveda Villalón (Ontology Engineering Group)</dc:contributor>
         <dc:contributor xml:lang="es">Oscar Corcho García (Ontology Engineering Group)</dc:contributor>
-        <dc:creator xml:lang="es">Paola Espinoza Arias (Ontology Engineering Group y y Secretaría de Educación Superior, Ciencia, Tecnología e Innovación)</dc:creator>
-        <dc:description xml:lang="es">Este vocabulario extiende la W3C Semantic Sensor Network Ontology (SSN) con propiedades para representar los datos de la contaminación acústica. También se extiende la OWL Ontology of Time (OWL-Time)  para representar el tiempo y la WGS84 Geo Positioning Ontology para representar la posición en el espacio a través de la longitud, latitud y altitud</dc:description>
+        <dc:creator xml:lang="es">Paola Espinoza Arias (Ontology Engineering Group)</dc:creator>
+        <dc:description xml:lang="es">Este vocabulario extiende la W3C Semantic Sensor Network Ontology (SSN) con propiedades para representar los datos de la contaminación acústica. También se extiende la OWL Ontology of Time (OWL-Time)  para representar el tiempo y la WGS84 Geo Positioning para representar la posición en el espacio a través de la longitud, latitud y altitud</dc:description>
         <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
         <dc:title xml:lang="es">Contaminación Acústica</dc:title>
     </owl:Ontology>
@@ -119,6 +120,21 @@
     <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass">
         <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseSensor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="en">belongs to sensor class</rdfs:label>
+        <rdfs:label xml:lang="es">pertenece a una clase de sensor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#hasAcousticEmisor -->
+
+
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#hasAcousticEmisor">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="es">El nivel de ruido tiene una fuente emisora que lo provoca</rdfs:comment>
+        <rdfs:label xml:lang="en">has acoustic emisor</rdfs:label>
+        <rdfs:label xml:lang="es">tiene emisor acústico</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -130,6 +146,7 @@
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensorOutput"/>
         <rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
         <rdfs:label xml:lang="en">has unit of measure</rdfs:label>
+        <rdfs:label xml:lang="es">tiene unidad de medida</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -142,7 +159,34 @@
         <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Weighting"/>
         <rdfs:comment xml:lang="es">La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial. Puede ser sin poderación (Z), ponderación A o C</rdfs:comment>
         <rdfs:label xml:lang="es">es ponderado con</rdfs:label>
-        <rdfs:label xml:lang="en">is weighting with</rdfs:label>
+        <rdfs:label xml:lang="en">is weightin with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate -->
+
+
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseSensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:comment xml:lang="es">Última fecha de calibración del sensor.  La calibración es un proceso periódico realizado a los sensores acústicos para verificar su correcto funcionamiento en sus distintos modos de trabajo.</rdfs:comment>
+        <rdfs:label xml:lang="en">last calibration date</rdfs:label>
+        <rdfs:label xml:lang="es">última fecha de calibración del sensor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#referenceInterval -->
+
+
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#referenceInterval">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="es">Intervalo de tiempo al que se refiere la evaluación del ruido. El intervalo de tiempo de referencia se puede especificar en normas nacionales o internacionales o por las autoridades locales para englobar las actividades humanas típicas y las variaciones en el funcionamiento de las fuentes de ruido. Los intervalos de tiempo de referencia pueden ser por ejemplo: una parte del día, un día entero o una semana completa. Algunos países pueden definir incluso intervalos de referencia más largos.</rdfs:comment>
+        <rdfs:label xml:lang="es">intervalo de referencia</rdfs:label>
+        <rdfs:label xml:lang="en">reference Interval</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISO 1996-1: 2005</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -193,28 +237,16 @@ above the local reference ellipsoid).</rdfs:comment>
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
 
 
-    
-
-
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate -->
-
-
-    <owl:DatatypeProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate">
-        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseSensor"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="es">Última fecha de calibración del sensor.  La calibración es un proceso periódico realizado a los sensores acústicos para verificar su correcto funcionamiento en sus distintos modos de trabajo.</rdfs:comment>
-        <rdfs:label xml:lang="en">last calibration date</rdfs:label>
-        <rdfs:label xml:lang="es">última fecha de calibración</rdfs:label>
-    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy xml:lang="en">http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="es">está en esquema</rdfs:label>
+        <rdfs:label xml:lang="en">is in scheme</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -247,7 +279,7 @@ above the local reference ellipsoid).</rdfs:comment>
 
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel">
         <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
-        <rdfs:comment xml:lang="es">Nivel de ruido que ha sido medido por el sensor. Se mide en Decibelios (dB)</rdfs:comment>
+        <rdfs:comment xml:lang="es">Nivel de ruido que ha sido medido por el sensor. Se mide en Decibelios (dB).</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de Ruido</rdfs:label>
         <rdfs:label xml:lang="en">Noise Level</rdfs:label>
     </owl:Class>
@@ -259,21 +291,21 @@ above the local reference ellipsoid).</rdfs:comment>
 
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseSensor">
         <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
-        <rdfs:comment xml:lang="es">Mide el nivel de ruido</rdfs:comment>
+        <rdfs:comment xml:lang="es">Instrumento provisto de un micrófono amplificador, detector de RMS (Root Mean Square), integrador-indicador de lectura y curvas de ponderación, que se utiliza para medición de niveles de presión sonora.</rdfs:comment>
         <rdfs:label xml:lang="en">Noise Sensor</rdfs:label>
         <rdfs:label xml:lang="es">Sensor de Ruido</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel -->
 
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel">
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel">
         <rdfs:subClassOf rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel"/>
-        <rdfs:comment xml:lang="es">Nivel de presión sonora ponderado en frecuencia y ponderado en el tiempo superado el N% de tiempo del intervalo considerado</rdfs:comment>
+        <rdfs:comment xml:lang="es">Nivel de presión sonora ponderado en frecuencia y ponderado en el tiempo superado el N% de tiempo del intervalo considerado.</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de Ruido en Percentiles</rdfs:label>
-        <rdfs:label xml:lang="en">Percentil Noise Level</rdfs:label>
+        <rdfs:label xml:lang="en">Percentile Noise Level</rdfs:label>
         <rdfs:seeAlso xml:lang="es">AENOR: UNE-ISO 1996-1</rdfs:seeAlso>
     </owl:Class>
     
@@ -284,7 +316,7 @@ above the local reference ellipsoid).</rdfs:comment>
 
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Weighting">
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
-        <rdfs:comment xml:lang="es">La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial. Puede ser sin poderación (Z), ponderación A o C</rdfs:comment>
+        <rdfs:comment xml:lang="es">La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial. Puede ser ponderación A, C o sin ponderación.</rdfs:comment>
         <rdfs:label xml:lang="es">Ponderación</rdfs:label>
         <rdfs:label xml:lang="en">Weighting</rdfs:label>
     </owl:Class>
@@ -326,7 +358,26 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:comment xml:lang="es">La noción de un concepto SKOS es útil cuando se describe la estructura conceptual o intelectual de un sistema de organización del conocimiento y cuando se hace referencia a ideas o significados específicos establecidos dentro de un KOS (Knowledge Organization System).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+        <rdfs:label xml:lang="es">Concepto</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <rdfs:comment xml:lang="en">Concept Scheme</rdfs:comment>
+        <rdfs:comment xml:lang="es">Esquema de Concepto</rdfs:comment>
+        <rdfs:comment xml:lang="es">Un esquema de concepto de SKOS puede ser visto como una agregación de uno o más conceptos de SKOS. Las relaciones semánticas (enlaces) entre esos conceptos también pueden ser vistas como parte de un esquema conceptual. Sin embargo, esta definición pretende ser sugestiva y no restrictiva, y existe cierta flexibilidad en el modelo formal de datos que se indica a continuación.
+
+La noción de un esquema conceptual es útil cuando se trata de datos de una fuente desconocida y cuando se trata de datos que describen dos o más sistemas de organización del conocimiento diferentes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2004/02/skos/core</rdfs:isDefinedBy>
+    </owl:Class>
     
 
 
@@ -334,7 +385,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 
     <owl:Class rdf:about="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">
-        <rdfs:comment xml:lang="en">A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called &quot;metre&quot;. (definition taken from om ontology)</rdfs:comment>
         <rdfs:comment xml:lang="es">Una unidad de medida es una magnitud definida de una cantidad, definida y adoptada por convención y / o por ley. Se utiliza como estándar para medir la misma cantidad, donde cualquier otro valor de la cantidad puede expresarse como un simple múltiplo de la unidad de medida. Por ejemplo, longitud es una cantidad; El metro es una unidad de longitud que representa una longitud predeterminada definida. Cuando decimos 10 metros (o 10 m), en realidad decimos 10 veces la longitud predeterminada definida llamada &quot;metro&quot;. (definición tomada de la ontología om)</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wurvoc.org/vocabularies/om-1.8/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="es">Unidad de Medida</rdfs:label>
@@ -360,6 +410,33 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Decibel">
         <rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AcousticEmisor -->
+
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AcousticEmisor">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="es">Cualquier actividad, infraestructura, equipo, maquinaria o comportamiento que genere contaminación acústica.</rdfs:comment>
+        <rdfs:label xml:lang="en">Acoustic Emisor</rdfs:label>
+        <rdfs:label xml:lang="es">Emisor Acústico</rdfs:label>
+        <rdfs:seeAlso xml:lang="es">Ley 37/2003 de 17 de noviembre, del Ruido.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Agglomeration -->
+
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Agglomeration">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AcousticEmisor"/>
+        <rdfs:comment xml:lang="es">Los municipios con una población superior a 100.000 habitantes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agglomeration</rdfs:label>
+        <rdfs:label xml:lang="es">Aglomeración</rdfs:label>
+        <rdfs:seeAlso xml:lang="es">Ley 37/2003 de 17 de noviembre, del Ruido.</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -392,7 +469,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L01">
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel"/>
         <rdfs:comment xml:lang="es">Nivel de ruido que se sobrepasa durante el 1% del tiempo de observación.</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de ruido sobre el 1%</rdfs:label>
     </owl:NamedIndividual>
@@ -403,7 +480,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L10">
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel"/>
         <rdfs:comment xml:lang="es">Nivel de ruido que se sobrepasa durante el 10% del tiempo de observación</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de ruido sobre el 10%</rdfs:label>
     </owl:NamedIndividual>
@@ -414,7 +491,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L50">
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel"/>
         <rdfs:comment xml:lang="es">Nivel de ruido que se sobrepasa durante el 50% del tiempo de observación</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de ruido sobre el 50%</rdfs:label>
     </owl:NamedIndividual>
@@ -425,7 +502,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L90">
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel"/>
         <rdfs:comment xml:lang="es">Nivel de ruido que se sobrepasa durante el 90% del tiempo de observación</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de ruido sobre el 90%</rdfs:label>
     </owl:NamedIndividual>
@@ -436,7 +513,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#L99">
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentileNoiseLevel"/>
         <rdfs:comment xml:lang="es">Nivel de ruido que se sobrepasa durante el 99% del tiempo de observación</rdfs:comment>
         <rdfs:label xml:lang="es">Nivel de ruido sobre el 99%</rdfs:label>
     </owl:NamedIndividual>
@@ -491,6 +568,49 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
         <rdfs:label xml:lang="en">Night noise level</rdfs:label>
         <rdfs:label xml:lang="es">Nivel de ruido de noche</rdfs:label>
         <rdfs:seeAlso xml:lang="es">ISO 1996-2: 1987</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#MajorAirport -->
+
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#MajorAirport">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AcousticEmisor"/>
+        <rdfs:comment xml:lang="es">Cualquier aeropuerto civil con más de 50.000 movimientos por año, considerando
+como movimientos tanto los despegues como los aterrizajes, con exclusión de los que se efectúen únicamente a efectos de formación en aeronaves ligeras.</rdfs:comment>
+        <rdfs:label xml:lang="es">Gran aeropouerto</rdfs:label>
+        <rdfs:label xml:lang="en">Major airport</rdfs:label>
+        <rdfs:seeAlso xml:lang="es">Ley 37/2003 de 17 de noviembre, del Ruido.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#MajorRailway -->
+
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#MajorRailway">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AcousticEmisor"/>
+        <rdfs:comment xml:lang="es">cualquier vía férrea con un tráfico superior a 30.000 trenes por año.</rdfs:comment>
+        <rdfs:label xml:lang="es">Gran eje ferroviario</rdfs:label>
+        <rdfs:label xml:lang="en">Major Railway</rdfs:label>
+        <rdfs:seeAlso xml:lang="es">Ley 37/2003 de 17 de noviembre, del Ruido.</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#MajorRoad -->
+
+
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#MajorRoad">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AcousticEmisor"/>
+        <rdfs:comment xml:lang="es">Cualquier carretera con un tráfico superiora 3 millones de vehículos por año.</rdfs:comment>
+        <rdfs:label xml:lang="es">Gran eje vial</rdfs:label>
+        <rdfs:label xml:lang="en">Major Road</rdfs:label>
+        <rdfs:seeAlso xml:lang="es">Ley 37/2003 de 17 de noviembre, del Ruido.</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
