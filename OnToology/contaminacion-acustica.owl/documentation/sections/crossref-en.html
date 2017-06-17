@@ -81,6 +81,8 @@ This section provides details for each class and property defined by contaminaci
          <dd>
             <a href="#hasAcousticEmisor"
                title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#hasAcousticEmisor">has acoustic emisor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#referenceInterval"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#referenceInterval">reference interval</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -104,8 +106,8 @@ This section provides details for each class and property defined by contaminaci
          <dd>
             <a href="#belongsToSensorClass"
                title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass">belongs to sensor class</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#lastCalibrationDay"
-               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDay">last calibration date</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#lastCalibrationDate"
+               title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate">last calibration date</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -179,7 +181,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#location" title="http://www.w3.org/2003/01/geo/wgs84_pos#location">location</a>
+            <span class="dotted" title="http://www.w3.org/2003/01/geo/wgs84_pos#location">location</span>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -265,13 +267,12 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#isWeightingWith">is weighting with</a>
       </li>
       <li>
-         <a href="#lastCalibrationDay"
-            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDay">last calibration date</a>
+         <a href="#lastCalibrationDate"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate">last calibration date</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#location" title="http://www.w3.org/2003/01/geo/wgs84_pos#location">
-            <span>location</span>
-         </a>
+         <a href="#referenceInterval"
+            title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#referenceInterval">reference interval</a>
       </li>
    </ul>
    <div class="entity" id="belongsToSensorClass">
@@ -377,13 +378,13 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
          </dl>
       </div>
    </div>
-   <div class="entity" id="lastCalibrationDay">
+   <div class="entity" id="lastCalibrationDate">
       <h3>last calibration date<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDay</p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDate</p>
       <div class="comment">
          <span class="markdown">Última fecha de calibración del sensor.  La calibración es un proceso periódico realizado a los sensores acústicos para verificar su correcto funcionamiento en sus distintos modos de trabajo.</span>
       </div>
@@ -402,24 +403,27 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://www.w3.org/2003/01/geo/wgs84_pos#location">
-      <h3>location<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="referenceInterval">
+      <h3>reference interval<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.w3.org/2003/01/geo/wgs84_pos#location</p>
+         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#referenceInterval</p>
+      <div class="comment">
+         <span class="markdown">Intervalo de tiempo al que se refiere la evaluación del ruido. El intervalo de tiempo de referencia se puede especificar en normas nacionales o internacionales o por las autoridades locales para englobar las actividades humanas típicas y las variaciones en el funcionamiento de las fuentes de ruido. Los intervalos de tiempo de referencia pueden ser por ejemplo: una parte del día, un día entero o una semana completa. Algunos países pueden definir incluso intervalos de referencia más largos.</span>
+      </div>
       <div class="description">
          <dl>
-            <dt>has range</dt>
+            <dt>has domain</dt>
             <dd>
-               <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
-                  title="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">SpatialThing</a>
+               <a href="#NoiseLevel"
+                  title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel">Noise Level</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>is also defined as</dt>
+            <dt>has range</dt>
             <dd>
-               <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#location">annotation property</a>
+               <span class="dotted" title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</span>
             </dd>
          </dl>
       </div>
