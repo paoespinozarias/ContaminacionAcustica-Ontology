@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1497656067126" name="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="contaminacion-acustica.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1497656067126" name="shadowed:http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="OnToology/contaminacion-acustica.owl/documentation/ontology.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1498051348331" name="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="contaminacion-acustica.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1498051348331" name="shadowed:http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="OnToology/contaminacion-acustica.owl/documentation/ontology.xml"/>
     </group>
 </catalog>

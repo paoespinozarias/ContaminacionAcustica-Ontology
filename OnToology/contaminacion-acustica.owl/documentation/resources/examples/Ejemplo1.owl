@@ -25,6 +25,10 @@
 #    Annotation properties
 #################################################################
 
+###  http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#lastCalibrationDay
+noise:lastCalibrationDay rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#alt
 wgs84_pos:alt rdf:type owl:AnnotationProperty .
 
@@ -62,9 +66,9 @@ wgs84_pos:long rdf:type owl:AnnotationProperty .
                                             ssn:FeatureOfInterest ,
                                             wgs84_pos:SpatialThing ;
                                    rdfs:label "Localización de Paseo de Recoletos"@es ;
-                                   wgs84_pos:alt "648.0"^^xsd:float ;
-                                   wgs84_pos:lat "40.423332"^^xsd:float ;
-                                   wgs84_pos:long "-3.6908333"^^xsd:float .
+                                   wgs84_pos:alt 648.0 ;
+                                   wgs84_pos:lat 40.423332 ;
+                                   wgs84_pos:long -3.6908333 .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica/ejemplo1#Instant20170401
@@ -147,9 +151,9 @@ wgs84_pos:long rdf:type owl:AnnotationProperty .
 :NoiseSensor01Location rdf:type owl:NamedIndividual ,
                                 wgs84_pos:SpatialThing ;
                        rdfs:label "Ubicación del sensor NoiseSensor01"@es ;
-                       wgs84_pos:alt "648.0"^^xsd:float ;
-                       wgs84_pos:lat "40.423332"^^xsd:float ;
-                       wgs84_pos:long "-3.6908333"^^xsd:float .
+                       wgs84_pos:alt 648.0 ;
+                       wgs84_pos:lat 40.423332 ;
+                       wgs84_pos:long -3.6908333 .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica/ejemplo1#NoiseSensor01ObservationValue_ObservationLdInterval201704
