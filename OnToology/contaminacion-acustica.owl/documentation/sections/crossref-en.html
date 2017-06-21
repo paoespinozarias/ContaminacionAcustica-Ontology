@@ -43,7 +43,7 @@ This section provides details for each class and property defined by contaminaci
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#AverageNoiseLevel</p>
       <div class="comment">
-         <span class="markdown">Nivel medio de ruido que ha sido medido por el sensor.</span>
+         <span class="markdown">Nivel medio de presión sonora que ha sido medido por el sensor.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -62,7 +62,7 @@ This section provides details for each class and property defined by contaminaci
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel</p>
       <div class="comment">
-         <span class="markdown">Nivel de ruido que ha sido medido por el sensor. Se mide en Decibelios (dB)</span>
+         <span class="markdown">Nivel de presión sonora que ha sido medido por el sensor. Es una magnitud física para describir la contaminación acústica, que tiene relación con los efectos producidos por ésta. Se mide en Decibelios (dB).</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -95,7 +95,7 @@ This section provides details for each class and property defined by contaminaci
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseSensor</p>
       <div class="comment">
-         <span class="markdown">Dispositivo que mide el nivel de ruido.</span>
+         <span class="markdown">Dispositivo que mide el nivel de ruido. Detecta los cambios en la presión del aire, en determinado lugar y en un momento dado, y los  convierte en pulso eléctricos. Estos pulsos eléctricos tienen una frecuencia, que es la de las ondas acústicas. El rango de frecuencia que percibe el ser humano es de 20 Hz a 20 kHz.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -194,7 +194,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
       <p>
          <strong>IRI:</strong> http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure</p>
       <div class="comment">
-         <span class="markdown">A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called "metre". (definition taken from om ontology).</span>
+         <span class="markdown">Una unidad de medida es una magnitud definida de una cantidad, definida y adoptada por convención y / o por ley. Se utiliza como estándar para medir la misma cantidad, donde cualquier otro valor de la cantidad puede expresarse como un simple múltiplo de la unidad de medida. Por ejemplo, longitud es una cantidad; El metro es una unidad de longitud que representa una longitud predeterminada definida. Cuando decimos 10 metros (o 10 m), en realidad decimos 10 veces la longitud predeterminada definida llamada "metro". (definición tomada de la ontología om).</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -222,7 +222,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#Weighting</p>
       <div class="comment">
-         <span class="markdown">La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial. Puede ser sin poderación (Z), ponderación A o C.</span>
+         <span class="markdown">La medida que realiza el Sensor de Ruido tiene una ponderación frecuencial que se utiliza para una correcta interpretación y medición de  los  niveles  de  sonoridad  de  un  determinado  sonido  en  comparación  con  la naturaleza  no  lineal  del  oído  humano  para  las  distintas  frecuencias  del  espectro audible. Puede ser sin poderación (Z), ponderación A o C.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
@@ -283,7 +283,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#belongsToSensorClass</p>
       <div class="comment">
-         <span class="markdown">El sensor de ruido puede pertenecer o no a una clase.</span>
+         <span class="markdown">El sensor de ruido puede pertenecer o no a una clase. La clase define las caracterísiticas técnicas del sensor que establecen los límites de aceptación y el rango de temperaturas de funcionamiento.</span>
       </div>
       <div class="description">
          <dl>
@@ -309,7 +309,7 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
       <p>
          <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#hasAcousticEmisor</p>
       <div class="comment">
-         <span class="markdown">El nivel de ruido tiene una fuente emisora que lo provoca</span>
+         <span class="markdown">El nivel de ruido tiene un emisor acústico que lo provoca.</span>
       </div>
       <div class="description">
          <dl>
@@ -432,12 +432,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
    <ul class="hlist">
       <li>
-         <a href="#http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/aglomeracion"
-            title="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/aglomeracion">
-            <span>aglomeracion</span>
-         </a>
-      </li>
-      <li>
          <a href="#ClaseI"
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#ClaseI">Clase I</a>
       </li>
@@ -448,24 +442,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
       <li>
          <a href="#http://dbpedia.org/resource/Decibel" title="http://dbpedia.org/resource/Decibel">
             <span>decibel</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-aeropuerto"
-            title="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-aeropuerto">
-            <span>gran aeropuerto</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-ferroviario"
-            title="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-ferroviario">
-            <span>gran eje ferroviario</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-viario"
-            title="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-viario">
-            <span>gran eje viario</span>
          </a>
       </li>
       <li>
@@ -481,21 +457,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
             title="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PonderacionZ">Ponderación Z</a>
       </li>
    </ul>
-   <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/aglomeracion">
-      <h3>aglomeracion<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/aglomeracion</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="ClaseI">
       <h3>Clase I<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -544,51 +505,6 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
          <dd>
             <a href="#http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"
                title="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure">Unit of Measure</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-aeropuerto">
-      <h3>gran aeropuerto<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-aeropuerto</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-ferroviario">
-      <h3>gran eje ferroviario<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-ferroviario</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-viario">
-      <h3>gran eje viario<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica/emisor-acustico/gran-eje-viario</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
