@@ -1,6 +1,5 @@
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/2002/07/owl#imports> <http://purl.oclc.org/NET/ssnx/ssn> .
-<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://creativecommons.org/ns#license> "http://creativecommons.org/licenses/by/4.0/" .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> <http://purl.org/dc/elements/1.1/contributor> "Mariano Fern\u00E1ndez L\u00F3pez (Ontology Engineering Group)"@es .
