@@ -8,6 +8,7 @@
 
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica> rdf:type owl:Ontology ;
                                                                                       owl:imports <http://purl.oclc.org/NET/ssnx/ssn> ,
+                                                                                                  <http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica> ,
                                                                                                   <http://www.w3.org/2006/time> ;
                                                                                       <http://creativecommons.org/ns#license> "http://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
                                                                                       <http://purl.org/dc/elements/1.1/contributor> "Mariano Fernández López (Ontology Engineering Group)"@es ,
