@@ -130,6 +130,23 @@
 # 
 # #################################################################
 # #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.co-ode.org/ontologies/ont.owl#timePercentage
+<http://www.co-ode.org/ontologies/ont.owl#timePercentage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.co-ode.org/ontologies/ont.owl#timePercentage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#PercentilNoiseLevel> .
+<http://www.co-ode.org/ontologies/ont.owl#timePercentage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://www.co-ode.org/ontologies/ont.owl#timePercentage> <http://www.w3.org/2000/01/rdf-schema#comment> "Porcentaje de tiempo (N%) del intervalo de tiempo de referencia en el que se excede el nivel de ruido"@es .
+<http://www.co-ode.org/ontologies/ont.owl#timePercentage> <http://www.w3.org/2000/01/rdf-schema#label> "Porcentaje de tiempo"@es .
+<http://www.co-ode.org/ontologies/ont.owl#timePercentage> <http://www.w3.org/2000/01/rdf-schema#label> "Time percentage"@en .
+# 
+# 
+# 
+# #################################################################
+# #
 # #    Classes
 # #
 # #################################################################
@@ -145,7 +162,7 @@
 # http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.oclc.org/NET/ssnx/ssn#Property> .
-<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Nivel de presi\u00F3n sonora que ha sido medido por el sensor. Es una magnitud f\u00EDsica para describir la contaminaci\u00F3n ac\u00FAstica, que tiene relaci\u00F3n con los efectos producidos por \u00E9sta. Se mide en Decibelios (dB)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Noise presure level (dB)."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Nivel de Ruido"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica#NoiseLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Noise Level"@en .
 # 
