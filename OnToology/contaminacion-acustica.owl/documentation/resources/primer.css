@@ -30,16 +30,6 @@ div.exampleheader {
   padding-top: 2px;
 }
 
-div.example { color: #A3A300 }
-div.example p { color: black }
-div.example {
-    border-left-width: .5em;
-    border-left-style: solid;
-    border-color: #E0CB52;
-    background: #FCFAEE;    
-	
-}
-
 div.exampleheader span.exampleheader {
   background: #F9F9F9;
   padding-top: 0px;
