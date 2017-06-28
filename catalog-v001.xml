@@ -3,7 +3,7 @@
     <uri id="Imports Wizard Entry" name="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica" uri="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica"/>
     <uri id="Imports Wizard Entry" name="http://vocab.linkeddata.es/datosabiertos/kos/medio-ambiente/contaminacion-acustica" uri="http://vocab.linkeddata.es/datosabiertos/emisor-acustico.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1498557461040" name="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="contaminacion-acustica.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1498557461040" name="shadowed:http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="OnToology/contaminacion-acustica.owl/documentation/ontology.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1498636282055" name="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="contaminacion-acustica.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1498636282055" name="shadowed:http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/contaminacion-acustica" uri="OnToology/contaminacion-acustica.owl/documentation/ontology.xml"/>
     </group>
 </catalog>
